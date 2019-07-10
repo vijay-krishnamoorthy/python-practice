@@ -1,0 +1,16 @@
+import os
+os.mkdir("package")
+os.chdir("package")
+os.mkdir("package_1")
+os.mkdir("package_2")
+os.mkdir("package_3")
+f=open("__init__.py","x")
+f.close()
+os.chdir("package_1")
+f=open("__init__.py","x")
+f.close()
+f=open("calc.py","x")
+f.close()
+f=open("app.py","x")
+f.close()
+

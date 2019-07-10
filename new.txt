@@ -1,0 +1,6 @@
+types of parameters :
+ required arguements
+ keyword arguements
+ default arguements 
+ vaiable-length arguements
+ 
