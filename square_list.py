@@ -5,7 +5,6 @@ def square_it(var):
     square = lambda x:x**2
     for i in var:
         l.append(square(i))
-    file_object.append(l)
     print(l)
         
 def return_odd(r):
