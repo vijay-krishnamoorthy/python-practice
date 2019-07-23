@@ -71,7 +71,7 @@ print(x.inserted_ids,end='')
 print(x.inserted_ids, end='')
 for i in x.inserted_ids:
     print(i)
-
+ 
 ##finding one spexcific element in the list:
 
 val = mycol.find_one()
