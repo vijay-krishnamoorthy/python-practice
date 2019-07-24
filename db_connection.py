@@ -18,7 +18,7 @@ mydb=client['colors']
 
 #creating collections
 
-mycol=mydb['collection_1']
+mycol=mydb['person']
 
 #listing all collections in the database
 col_list = mydb.list_collection_names()
@@ -27,12 +27,6 @@ if 'person' in col_list:
     print("Collection - person exists")
 else: 
     print("No such collection exists")
-
-dict = { 'roll': 36,'name': 'vijay','age': 22}
-obj = mycol.insert_one(dict)
-
-print(obj)
-
 stud_list = [
     {'roll_no': 1,'name': "vijay",'age':21},
     {'roll_no': 2,'name': "goutham",'age':21},
@@ -49,8 +43,6 @@ stud_list = [
     {'roll_no': 13,'name': "hithere",'age':23}
 ]
 
-x=mycol.insert_many(stud_list)
-print(x.inserted_ids,end='')
 
 # stud_list = [
 #     {'_id':21,'roll_no': 1, 'name': "vijay", 'age': 21},
@@ -68,11 +60,17 @@ print(x.inserted_ids,end='')
 #     {'_id':33,'roll_no': 13, 'name': "hithere", 'age': 23}
 # ]
 # x = mycol.insert_many(stud_list)
-print(x.inserted_ids, end='')
-for i in x.inserted_ids:
-    print(i)
+# print(x.inserted_ids, end='')
+# for i in x.inserted_ids:
+#     print(i)
  
 ##finding one spexcific element in the list:
 
 val = mycol.find_one()
 print(val)
+
+docs = mycol.find().sort('name')
+for d in docs:
+    print(d)
+
+mycol.delete_one({'name':'Rahul'})
